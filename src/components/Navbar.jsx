@@ -15,11 +15,14 @@ export default function Navbar({ scrollTo }) {
   const location = useLocation()
   const { totalItems } = useCart()
 
+  // Close menu on route change
   useEffect(() => {
-    const { style } = document.body
-    const previousOverflow = style.overflow
-    style.overflow = menuOpen ? 'hidden' : ''
-    return () => { style.overflow = previousOverflow }
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
   const handleLink = (e, href) => {
@@ -38,9 +41,7 @@ export default function Navbar({ scrollTo }) {
   return (
     <>
       <nav className={styles.nav} id="nav">
-        <Link to="/" className={styles.logo}>
-          NUKÖ
-        </Link>
+        <Link to="/" className={styles.logo}>NUKÖ</Link>
 
         <ul className={styles.links}>
           {links.map(l => (
@@ -68,33 +69,47 @@ export default function Navbar({ scrollTo }) {
           <Link to="/catalogue" className={styles.cta}>Nos poêles</Link>
         </div>
 
+        {/* Burger / Close toggle */}
         <button
-          className={styles.burger}
-          onClick={() => setMenuOpen(true)}
-          aria-label="Ouvrir le menu"
+          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
-          <span /><span />
+          <span /><span /><span />
         </button>
       </nav>
 
-      <div id="mobile-menu" className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}>
-        <button type="button" className={styles.close} onClick={() => setMenuOpen(false)} aria-label="Fermer">&times;</button>
+      {/* Overlay — click to close */}
+      {menuOpen && (
+        <div
+          className={styles.overlay}
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile drawer */}
+      <div
+        id="mobile-menu"
+        className={`${styles.drawer} ${menuOpen ? styles.drawerOpen : ''}`}
+      >
         <ul>
           {links.map(l => (
             <li key={l.href}>
-              <Link to={l.href} onClick={e => handleLink(e, l.href)}>{l.label}</Link>
+              <Link
+                to={l.href}
+                className={isActive(l.href) ? styles.drawerActive : ''}
+                onClick={e => handleLink(e, l.href)}
+              >
+                {l.label}
+              </Link>
             </li>
           ))}
           <li>
             <Link to="/panier" onClick={() => setMenuOpen(false)}>
               Panier {totalItems > 0 && `(${totalItems})`}
-            </Link>
-          </li>
-          <li>
-            <Link to="/catalogue" className={styles.mobileRdv} onClick={() => setMenuOpen(false)}>
-              Découvrir nos poêles &rarr;
             </Link>
           </li>
         </ul>
