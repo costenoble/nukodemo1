@@ -1,0 +1,338 @@
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 450px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroBg { position: absolute; inset: 0; }
+.heroBg img { width: 100%; height: 100%; object-fit: cover; }
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem 4rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.heroTitle em { font-style: italic; }
+
+.heroSub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+/* ─── INFOS ─── */
+.infos {
+  background: var(--white);
+  padding: 5rem 4rem;
+}
+
+.infosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.infoCard {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  color: var(--blue);
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.infoCard h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.infoCard p {
+  font-size: 0.9rem;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+.infoLink {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--black);
+  line-height: 1.5;
+  transition: color 0.3s;
+}
+
+.infoLink:hover { color: var(--blue); }
+
+.infoSub {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--grey);
+  margin-top: 0.35rem;
+}
+
+/* ─── FORM SECTION ─── */
+.formSection {
+  background: var(--cream);
+  padding: 6rem 4rem;
+}
+
+.formInner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.sidebarTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.sidebarTitle em { font-style: italic; }
+
+.sidebarText {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.sidebarNote {
+  padding: 1.5rem;
+  background: var(--white);
+  border-left: 2px solid var(--gold);
+  margin-bottom: 2rem;
+}
+
+.sidebarNote strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.sidebarNote p {
+  font-size: 0.85rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+.sidebarContact p {
+  font-size: 0.78rem;
+  color: var(--grey);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.phoneLink {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--black);
+  transition: color 0.3s;
+}
+
+.phoneLink:hover { color: var(--blue); }
+
+/* ─── FORM ─── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.group label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+  font-weight: 500;
+}
+
+.group label span {
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.group input,
+.group select,
+.group textarea {
+  background: var(--white);
+  border: 1px solid var(--grey-lt);
+  color: var(--black);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  appearance: none;
+}
+
+.group textarea { resize: vertical; min-height: 100px; }
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+  border-color: var(--blue);
+}
+
+.group input::placeholder,
+.group textarea::placeholder {
+  color: var(--grey-lt);
+}
+
+.rgpd {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.rgpd input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  accent-color: var(--blue);
+}
+
+.rgpd label {
+  font-size: 0.8rem;
+  color: var(--grey);
+  line-height: 1.5;
+}
+
+.rgpd a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.submit {
+  background: var(--black);
+  color: var(--white);
+  border: 1.5px solid var(--black);
+  padding: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  width: 100%;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.submit.success {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.submit:disabled { cursor: not-allowed; }
+
+/* ─── MAP ─── */
+.map {
+  background: var(--cream);
+  padding: 0 4rem 6rem;
+}
+
+.mapWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mapWrap img {
+  width: 100%;
+  aspect-ratio: 21/9;
+  object-fit: cover;
+  filter: grayscale(0.3);
+}
+
+.mapCard {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapLabel {
+  font-size: 0.9rem;
+  color: var(--black);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .infosGrid { grid-template-columns: repeat(2, 1fr); }
+  .formInner { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .heroInner { padding: 0 1.5rem 3rem; }
+  .infos { padding: 3rem 1.5rem; }
+  .infosGrid { grid-template-columns: 1fr; }
+  .formSection { padding: 4rem 1.5rem; }
+  .formRow { grid-template-columns: 1fr; }
+  .map { padding: 0 1.5rem 4rem; }
+  .mapCard { position: relative; bottom: auto; left: auto; }
+}

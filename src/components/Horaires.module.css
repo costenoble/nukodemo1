@@ -1,0 +1,121 @@
+.section {
+  background: var(--white);
+  padding: 8rem 4rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.75;
+  max-width: 400px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--grey-lt);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--grey-lt);
+  transition: background 0.2s;
+}
+
+.jour {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.heures {
+  font-weight: 300;
+  color: var(--grey);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.today {
+  background: rgba(74, 124, 148, 0.05);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 -1rem;
+}
+
+.today .jour { color: var(--blue); font-weight: 500; }
+.today .heures { color: var(--blue); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.ferme .jour { color: var(--grey-lt); }
+.ferme .heures { color: var(--grey-lt); }
+
+.urgence {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: rgba(196, 169, 125, 0.08);
+  border-left: 2px solid var(--gold);
+}
+
+.urgenceDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+}
+
+.urgence p {
+  font-size: 0.85rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+.urgence strong {
+  color: var(--black);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 5rem 1.5rem; }
+}

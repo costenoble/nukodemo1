@@ -1,0 +1,151 @@
+.devis {
+  background: var(--dark);
+  padding: 8rem 4rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.title em { font-style: italic; }
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contactItem strong {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-lt);
+  font-weight: 500;
+}
+
+.contactItem a,
+.contactItem span {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.3s;
+}
+
+.contactItem a:hover { color: var(--white); }
+
+/* ─── FORM ─── */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.groupFull { grid-column: 1 / -1; }
+
+.group label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+
+.group input,
+.group select,
+.group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+  width: 100%;
+  appearance: none;
+}
+
+.group textarea { resize: vertical; min-height: 100px; }
+
+.group input:focus,
+.group select:focus,
+.group textarea:focus {
+  border-color: var(--blue-lt);
+  background: rgba(74,124,148,0.08);
+}
+
+.group input::placeholder,
+.group textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+.submit {
+  grid-column: 1 / -1;
+  background: var(--black);
+  color: var(--white);
+  border: 1.5px solid var(--black);
+  padding: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  width: 100%;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.submit.success {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.submit:disabled { cursor: not-allowed; }
+
+@media (max-width: 1024px) {
+  .inner { grid-template-columns: 1fr; gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .devis { padding: 5rem 1.5rem; }
+  .form { grid-template-columns: 1fr; }
+}

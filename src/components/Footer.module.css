@@ -1,0 +1,129 @@
+.footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 5rem 4rem 2rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.logoImg {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+}
+
+.nav h4,
+.contact h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.nav ul a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.3s;
+}
+
+.nav ul a:hover { color: var(--white); }
+
+.contact p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.contact a {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+}
+
+.contact a:hover { color: var(--white); }
+
+.social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.45);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.social a:hover {
+  border-color: var(--blue-lt);
+  color: var(--blue-lt);
+}
+
+.bottom {
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+
+.bottom a {
+  color: rgba(255,255,255,0.2);
+  transition: color 0.3s;
+}
+
+.bottom a:hover {
+  color: rgba(255,255,255,0.45);
+}
+
+@media (max-width: 1024px) {
+  .inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 3rem 1.5rem 1.5rem; }
+  .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}

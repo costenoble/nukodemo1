@@ -1,0 +1,70 @@
+.page {
+  background: var(--cream);
+  padding: 10rem 4rem 6rem;
+  min-height: 80vh;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin-bottom: 3rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.75;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--blue);
+  transition: color 0.3s;
+}
+
+.back:hover { color: var(--black); }
+
+@media (max-width: 768px) {
+  .page { padding: 8rem 1.5rem 4rem; }
+}
